@@ -82,7 +82,7 @@ if mode == 'Machine learning ⌛':
     with tab3:    
         st.title('Key feature 🔑')
 
-        st.image('titanic/key_feature2.PNG', caption='key_feauture', use_column_width=True)
+        st.image('titanic/key_feature2.PNG', caption='key_feauture')
 
 if mode == 'Data analysis 🔍':
 
