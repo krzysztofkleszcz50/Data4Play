@@ -1,19 +1,23 @@
 import streamlit as st
-import importlib
 
-# Tworzymy słownik ze stronami
+# Importujemy moduły statycznie
+from main_page import main_page
+from titanic import titanic
+from company import company
+from survey import finding_friends
+from marathon import marathon
+
+# Tworzymy słownik ze stronami i ich powiązanymi funkcjami
 pages = {
-    "Let's start here - Welcome! 🙌": "main_page.main_page",
-    "LearningApp - Titanic! 🚢": "titanic.titanic",
-    "LearningApp - Company! 🏢": "company.company",
-    "LookingApp - Friends! 🕵️‍♀️": "survey.finding_friends",
-    "SwitchingApp - Marathon! 🏃‍♂️": "marathon.marathon"
+    "Let's start here - Welcome! 🙌": main_page.run,
+    "LearningApp - Titanic! 🚢": titanic.run,
+    "LearningApp - Company! 🏢": company.run,
+    "LookingApp - Friends! 🕵️‍♀️": finding_friends.run,
+    "SwitchingApp - Marathon! 🏃‍♂️": marathon.run
 }
 
 # Tworzenie nawigacji w sidebarze
 selected_page = st.sidebar.selectbox("Wybierz stronę", list(pages.keys()))
 
-# Dynamiczne ładowanie modułu
-module_name = pages[selected_page]
-module = importlib.import_module(module_name)
-module.run()
+# Wywołanie wybranej strony
+pages[selected_page]()
