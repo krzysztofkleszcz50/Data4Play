@@ -23,7 +23,7 @@ def marathon():
 
 # Słownik stron
 pages = {
-    "Let's start here - Welcome! 🙌": main_page,
+    "Let's start here - Welcome! 🙌": "main_page/main_page.py",
     "LearningApp - Titanic! 🚢": titanic,
     "LearningApp - Company! 🏢": company,
     "LookingApp - Friends! 🕵️‍♀️": finding_friends,
