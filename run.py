@@ -9,9 +9,11 @@
 
 #Import
 import streamlit as st
-import plotly.express as px
 import pandas as pd
-import plotly.graph_objects as go
+import seaborn as sns
+import matplotlib.pyplot as plt
+from pycaret.classification import load_model, predict_model
+import base64
 
 mode0 = st.sidebar.radio("titanic")
 
