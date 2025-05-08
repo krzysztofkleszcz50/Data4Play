@@ -6,24 +6,20 @@ def main_page():
 
 def titanic():
     st.title("LearningApp - Titanic! 🚢")
-    st.write("Analiza danych pasażerów Titanica.")
 
 def company():
     st.title("LearningApp - Company! 🏢")
-    st.write("Dane dotyczące firm.")
 
 def finding_friends():
     st.title("LookingApp - Friends! 🕵️‍♀️")
-    st.write("Analiza ankiety dotyczącej znajomości.")
 
 def marathon():
     st.title("SwitchingApp - Marathon! 🏃‍♂️")
-    st.write("Informacje o maratonie.")
 
 # Słownik stron
 pages = {
     "Let's start here - Welcome! 🙌": "main_page/main_page.py",
-    "LearningApp - Titanic! 🚢": titanic,
+    "LearningApp - Titanic! 🚢": "titanic/titanic.py",
     "LearningApp - Company! 🏢": company,
     "LookingApp - Friends! 🕵️‍♀️": finding_friends,
     "SwitchingApp - Marathon! 🏃‍♂️": marathon,
