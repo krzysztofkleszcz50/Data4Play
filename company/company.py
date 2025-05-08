@@ -1,5 +1,5 @@
 #Code structure
-#1. Imports
+#1. Imports.
 #2. Modes
 #3. Introduction
 #4. Finance analyse
