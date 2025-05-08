@@ -3,7 +3,8 @@ import streamlit as st
 # Definicja stron jako funkcji
 def main_page():
     st.title("Let's start here - Welcome! 🙌")
-    st.write("To jest strona startowa.")
+    st.write("Let's start here - Welcome! 🙌": "main_page/main_page.py")
+
 
 def titanic():
     st.title("LearningApp - Titanic! 🚢")
