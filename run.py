@@ -1,18 +1,4 @@
-import streamlit as st
-import importlib
-
-# Definicja stron jako moduły
-pages = {
-    "Let's start here - Welcome! 🙌": "main_page",
-    "LearningApp - Titanic! 🚢": "titanic",
-    "LearningApp - Company! 🏢": "company",
-    "LookingApp - Friends! 🕵️‍♀️": "survey.finding_friends",
-    "SwitchingApp - Marathon! 🏃‍♂️": "marathon"
-}
-
-# Tworzenie nawigacji w sidebarze
-selected_page = st.sidebar.selectbox("Wybierz stronę", list(pages.keys()))
-
-# Zamiast `st.navigation(pages).run()`, używamy dynamicznego importowania
-module = importlib.import_module(pages[selected_page])
-module.run()
+import streamlit as st 
+pages = { "Data4Play 💻": [ st.Page("main_page/main_page.py", title="Let's start here - Welcome! 🙌"), st.Page("titanic/titanic.py", title="LearningApp - Titanic! 🚢"), st.Page("company/company.py", title="LearningApp - Company! 🏢"), st.Page("survey/finding_friends.py", title="LookingApp - Friends! 🕵️‍♀️"), st.Page("marathon/marathon.py", title="SwitchingApp - Marathon! 🏃‍♂️") ], } 
+pg = st.navigation(pages) 
+pg.run()
