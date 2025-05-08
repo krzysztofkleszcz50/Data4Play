@@ -1,28 +1,19 @@
 import streamlit as st
+import importlib
 
-# Funkcja definiująca strony
-def main_page():
-    st.title("Let's start here - Welcome! 🙌")
-    st.write("Witamy na stronie głównej aplikacji Data4Play!")
-
-def titanic_page():
-    st.title("LearningApp - Titanic! 🚢")
-    st.write("Tutaj znajdziesz analizę danych dla Titanica.")
-
-def company_page():
-    st.title("Company Analysis")
-    st.write("Tutaj znajdziesz informacje o firmie.")
-
-# Słownik stron
+# Tworzymy słownik ze stronami
 pages = {
-    "Data4Play 💻": main_page,
-    "LearningApp - Titanic! 🚢": titanic_page,
-    "Company Analysis": company_page,
+    "Let's start here - Welcome! 🙌": "main_page.main_page",
+    "LearningApp - Titanic! 🚢": "titanic.titanic",
+    "LearningApp - Company! 🏢": "company.company",
+    "LookingApp - Friends! 🕵️‍♀️": "survey.finding_friends",
+    "SwitchingApp - Marathon! 🏃‍♂️": "marathon.marathon"
 }
 
-# Pasek nawigacyjny
-st.sidebar.title("Nawigacja")
-selected_page = st.sidebar.radio("Wybierz stronę", list(pages.keys()))
+# Tworzenie nawigacji w sidebarze
+selected_page = st.sidebar.selectbox("Wybierz stronę", list(pages.keys()))
 
-# Wywołanie wybranej strony
-pages[selected_page]()
+# Dynamiczne ładowanie modułu
+module_name = pages[selected_page]
+module = importlib.import_module(module_name)
+module.run()
