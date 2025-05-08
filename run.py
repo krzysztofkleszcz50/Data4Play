@@ -1,8 +1,8 @@
 import streamlit as st
 
 # Importujemy moduły statycznie
-from main_page import main_page
-from titanic import titanic
+from main_page import main_page/main_page.py
+from titanic import titanic/titanic.py
 from company import company
 from survey import finding_friends
 from marathon import marathon
