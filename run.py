@@ -4,7 +4,6 @@ import streamlit as st
 def main_page():
     st.write("Let's start here - Welcome! 🙌": "main_page/main_page.py")
 
-
 def titanic():
     st.title("LearningApp - Titanic! 🚢")
     st.write("Analiza danych pasażerów Titanica.")
