@@ -1,17 +1,37 @@
 import streamlit as st
 
-# Definicja stron
+# Definicja stron jako funkcji
+def main_page():
+    st.title("Let's start here - Welcome! 🙌")
+    st.write("To jest strona startowa.")
+
+def titanic():
+    st.title("LearningApp - Titanic! 🚢")
+    st.write("Analiza danych pasażerów Titanica.")
+
+def company():
+    st.title("LearningApp - Company! 🏢")
+    st.write("Dane dotyczące firm.")
+
+def finding_friends():
+    st.title("LookingApp - Friends! 🕵️‍♀️")
+    st.write("Analiza ankiety dotyczącej znajomości.")
+
+def marathon():
+    st.title("SwitchingApp - Marathon! 🏃‍♂️")
+    st.write("Informacje o maratonie.")
+
+# Słownik stron
 pages = {
-    "Let's start here - Welcome! 🙌": "main_page/main_page.py",
-    "LearningApp - Titanic! 🚢": "titanic/titanic.py",
-    "LearningApp - Company! 🏢": "company/company.py",
-    "LookingApp - Friends! 🕵️‍♀️": "survey/finding_friends.py",
-    "SwitchingApp - Marathon! 🏃‍♂️": "marathon/marathon.py"
+    "Let's start here - Welcome! 🙌": mainpage/main_page.py,
+    "LearningApp - Titanic! 🚢": titanic.py,
+    "LearningApp - Company! 🏢": company.py,
+    "LookingApp - Friends! 🕵️‍♀️": finding_friends,
+    "SwitchingApp - Marathon! 🏃‍♂️": marathon,
 }
 
-# Tworzenie nawigacji w sidebarze
+# Nawigacja w sidebarze
 selected_page = st.sidebar.selectbox("Wybierz stronę", list(pages.keys()))
 
-# Załadowanie wybranej strony
-st.write(f"Ładowanie: {selected_page}")
-exec(open(pages[selected_page]).read())
+# Wywołanie odpowiedniej funkcji
+pages[selected_page]()
